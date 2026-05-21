@@ -1,0 +1,311 @@
+/* ============================================================
+   tenses.css — CSS khusus untuk halaman Materi Tenses
+   File ini di-import SETELAH style.css, jadi bisa
+   menambah atau menimpa style dari style.css.
+   ============================================================ */
+
+/* ---- HEADER HALAMAN ---- */
+.page-header {
+  background: linear-gradient(135deg, #1e40af, #3b82f6);
+  color: #fff;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.page-header h1 {
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ---- LAYOUT UTAMA: Sidebar + Konten ---- */
+/* Ini adalah layout dua kolom menggunakan CSS Grid.
+   "250px" adalah lebar sidebar, "1fr" adalah sisa ruangnya. */
+.tenses-page-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+  align-items: start;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  position: sticky;   /* Sidebar tetap di tempatnya saat scroll */
+  top: 90px;          /* Jarak dari atas viewport (bawah navbar) */
+  max-height: 85vh;
+  overflow-y: auto;   /* Bisa di-scroll kalau konten panjang */
+}
+
+.sidebar h3 {
+  font-family: var(--font-head);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+.sidebar-group {
+  margin-bottom: 20px;
+}
+
+.sg-label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+
+/* Warna label grup di sidebar sesuai warna tenses */
+.sg-label.present     { color: #059669; }
+.sg-label.past        { color: #2563eb; }
+.sg-label.future      { color: #d97706; }
+.sg-label.past-future { color: #7c3aed; }
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 8px;
+}
+
+.sidebar ul li {
+  margin-bottom: 6px;
+}
+
+.sidebar ul li a {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  display: block;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+
+.sidebar ul li a:hover {
+  color: var(--primary);
+  background: #dbeafe;
+}
+
+/* ---- KONTEN AREA ---- */
+.tenses-content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ---- KARTU SETIAP TENSE ---- */
+.tense-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.tense-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Header kartu dengan warna berbeda per kelompok tenses */
+.tense-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  color: #fff;
+}
+
+/* Warna background header kartu */
+.tense-header.present     { background: linear-gradient(135deg, #059669, #10b981); }
+.tense-header.past        { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+.tense-header.future      { background: linear-gradient(135deg, #b45309, #f59e0b); }
+.tense-header.past-future { background: linear-gradient(135deg, #6d28d9, #8b5cf6); }
+
+/* Lingkaran nomor urut tense */
+.tense-number {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.tense-header h2 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  margin-bottom: 4px;
+}
+
+.tense-header p {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* Isi / body kartu */
+.tense-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ---- KOTAK RUMUS ---- */
+.formula-box {
+  background: #f8faff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.formula-box h4 {
+  font-family: var(--font-head);
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+  color: var(--primary);
+}
+
+/* Tabel rumus */
+.formula-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.formula-table th,
+.formula-table td {
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.formula-table th {
+  background: #dbeafe;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.formula-table td:first-child {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Font monospace untuk rumus agar lebih jelas */
+.formula-table td:last-child {
+  font-family: 'Courier New', monospace;
+  color: #1d4ed8;
+  background: #f0f9ff;
+}
+
+/* Kotak catatan kecil */
+.note {
+  margin-top: 14px;
+  padding: 10px 14px;
+  background: #fffbeb;
+  border-left: 3px solid #f59e0b;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.88rem;
+  color: #92400e;
+}
+
+/* ---- KATA PENANDA (Signal Words) ---- */
+.signal-words h4 {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+/* Kelompok tag-tag kata penanda */
+.signal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.signal-tags span {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---- CONTOH KALIMAT ---- */
+.examples h4 {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.example-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Item kalimat contoh, dibedakan warna per jenis */
+.ex-item {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+}
+
+.ex-item.pos { background: #f0fdf4; border-left: 3px solid #10b981; }  /* Hijau: positif */
+.ex-item.neg { background: #fef2f2; border-left: 3px solid #ef4444; }  /* Merah: negatif */
+.ex-item.que { background: #eff6ff; border-left: 3px solid #3b82f6; }  /* Biru: tanya */
+
+/* ---- PENGGUNAAN ---- */
+.use-case {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.use-case h4 {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.use-case ul {
+  padding-left: 20px;
+}
+
+.use-case ul li {
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE UNTUK TENSES PAGE
+   ============================================================ */
+@media (max-width: 900px) {
+  /* Di layar kecil, ubah layout menjadi 1 kolom (sidebar di atas) */
+  .tenses-page-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;  /* Hilangkan sticky di mobile */
+    max-height: none;
+  }
+}

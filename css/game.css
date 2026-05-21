@@ -1,0 +1,492 @@
+/* ============================================================
+   game.css — CSS khusus untuk halaman Games
+   ============================================================ */
+
+/* ---- HEADER GAMES ---- */
+.game-header {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.game-header h1 {
+  font-family: var(--font-head);
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+.game-header p {
+  font-size: 1.05rem;
+  opacity: 0.85;
+}
+
+/* ---- BARIS SKOR DI ATAS ---- */
+.score-bar {
+  background: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  margin-bottom: 40px;
+}
+
+.score-items {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.score-icon { font-size: 2rem; }
+
+.score-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.score-value {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  /* Animasi saat nilai berubah */
+  transition: transform 0.2s;
+}
+
+/* ---- TAB SELECTOR (pilih mode game) ---- */
+.game-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: #fff;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Tab yang sedang aktif */
+.tab-btn.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+/* ---- PANEL GAME (tiap mode) ---- */
+.game-panel { display: none; } /* Sembunyikan semua panel */
+.game-panel.active { display: block; } /* Tampilkan yang aktif */
+
+/* ---- KOTAK GAME UTAMA ---- */
+.game-box {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 36px;
+  box-shadow: var(--shadow);
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ---- AREA PROGRESS BAR ---- */
+.progress-area { margin-bottom: 28px; }
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Timer countdown */
+.timer {
+  background: #eff6ff;
+  color: var(--primary);
+  padding: 4px 12px;
+  border-radius: 99px;
+  font-size: 0.9rem;
+}
+
+/* Timer warna merah saat hampir habis */
+.timer.danger {
+  background: #fef2f2;
+  color: #ef4444;
+  animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Batang progress */
+.progress-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  border-radius: 99px;
+  transition: width 0.4s ease;  /* Animasi saat panjang berubah */
+}
+
+/* ---- AREA SOAL ---- */
+.question-area { margin-bottom: 28px; }
+
+/* Badge kategori tenses */
+.question-badge {
+  display: inline-block;
+  background: #ede9fe;
+  color: #6d28d9;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.question-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* ---- PILIHAN JAWABAN (grid 2 kolom) ---- */
+.options-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+/* Setiap tombol pilihan */
+.option-btn {
+  padding: 16px 20px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--primary);
+  background: #eff6ff;
+  color: var(--primary);
+}
+
+/* Label huruf pilihan (A, B, C, D) */
+.option-label {
+  width: 28px; height: 28px;
+  background: #e2e8f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+/* Warna saat jawaban benar */
+.option-btn.correct {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+}
+.option-btn.correct .option-label { background: #10b981; color: #fff; }
+
+/* Warna saat jawaban salah */
+.option-btn.wrong {
+  border-color: #ef4444;
+  background: #fef2f2;
+  color: #7f1d1d;
+}
+.option-btn.wrong .option-label { background: #ef4444; color: #fff; }
+
+/* ---- KOTAK FEEDBACK ---- */
+.feedback-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Warna feedback benar */
+.feedback-box.correct-fb { background: #ecfdf5; border: 1px solid #a7f3d0; }
+/* Warna feedback salah */
+.feedback-box.wrong-fb   { background: #fef2f2; border: 1px solid #fecaca; }
+
+.feedback-icon { font-size: 1.8rem; }
+.feedback-title { font-weight: 700; font-size: 1rem; margin-bottom: 4px; }
+.feedback-text { font-size: 0.9rem; color: var(--text-muted); }
+
+/* ---- TOMBOL AKSI GAME ---- */
+.game-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ---- GAME 2: FILL IN THE BLANK ---- */
+.fill-instruction {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+/* Kalimat dengan bagian yang dikosongkan */
+.fill-sentence {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Garis bawah menandai bagian yang harus diisi */
+.fill-sentence .blank {
+  display: inline-block;
+  min-width: 120px;
+  border-bottom: 3px solid var(--primary);
+  color: var(--primary);
+  font-style: italic;
+}
+
+/* Area input jawaban */
+.fill-input-area {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.fill-input {
+  flex: 1;
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.fill-input:focus { border-color: var(--primary); }
+.fill-input.correct-input { border-color: #10b981; background: #ecfdf5; }
+.fill-input.wrong-input   { border-color: #ef4444; background: #fef2f2; }
+
+/* Tombol petunjuk */
+.hint-btn {
+  background: none;
+  border: 1px dashed #f59e0b;
+  color: #92400e;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.88rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.hint-btn:hover { background: #fffbeb; }
+
+.hint-text {
+  margin-top: 8px;
+  padding: 10px 14px;
+  background: #fffbeb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #78350f;
+}
+
+/* ---- GAME 3: MATCH / TEBAK RUMUS ---- */
+.match-title {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.match-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.match-score-info {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+/* Layout dua kolom untuk kartu tenses dan rumus */
+.match-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.match-column-title {
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  grid-column: span 1;
+}
+
+/* Kartu individual yang bisa diklik */
+.match-card {
+  padding: 14px 18px;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.match-card:hover:not(.used):not(.selected) {
+  border-color: var(--primary);
+  background: #eff6ff;
+}
+
+/* Saat dipilih */
+.match-card.selected {
+  border-color: #7c3aed;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-weight: 700;
+}
+
+/* Saat cocok / benar */
+.match-card.matched {
+  border-color: #10b981;
+  background: #ecfdf5;
+  color: #065f46;
+  cursor: default;
+}
+
+/* Saat tidak cocok / salah */
+.match-card.no-match {
+  border-color: #ef4444;
+  background: #fef2f2;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25%  { transform: translateX(-5px); }
+  75%  { transform: translateX(5px); }
+}
+
+/* ---- PANEL HASIL AKHIR ---- */
+.result-panel {
+  text-align: center;
+  padding: 60px 40px;
+}
+
+.result-emoji {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: bounce 0.6s ease infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-15px); }
+}
+
+.result-panel h2 {
+  font-family: var(--font-head);
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.result-panel p { color: var(--text-muted); margin-bottom: 32px; }
+
+.result-score-display {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.result-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-stat span {
+  font-family: var(--font-head);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.result-stat small {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   RESPONSIVE GAMES
+   ============================================================ */
+@media (max-width: 600px) {
+  .game-box { padding: 20px 16px; }
+  .options-grid { grid-template-columns: 1fr; }
+  .match-area { grid-template-columns: 1fr; }
+  .fill-input-area { flex-direction: column; }
+  .score-items { gap: 20px; }
+}
