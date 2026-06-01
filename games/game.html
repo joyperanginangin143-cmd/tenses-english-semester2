@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Games – EnglishZone</title>
+  <title>Games - EnglishLearn</title>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../css/style.css"/>
   <link rel="stylesheet" href="../css/game.css"/>
@@ -18,7 +18,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="../pages/tenses.html">Materi Tenses</a></li>
+      <li><a href="../pages/tenses.html">Tenses Material</a></li>
       <li><a href="game.html" class="active">🎮 Games</a></li>
     </ul>
     <button class="hamburger" onclick="toggleMenu()">☰</button>
@@ -27,7 +27,8 @@
   <!-- HEADER GAMES -->
   <div class="game-header">
     <h1>🎮 Tenses Games Learn</h1>
-    <p>Uji kemampuan tenses-mu dengan games seru! Ada 2 mode permainan yang bisa kamu coba.</p>
+    <p>Test your knowledge of tenses with some fun games! 
+      There are two game modes for you to try.</p>
   </div>
 
   <!-- AREA SKOR dan PROGRES -->
@@ -37,21 +38,21 @@
         <div class="score-item">
           <span class="score-icon">⭐</span>
           <div>
-            <div class="score-label">Total Skor</div>
+            <div class="score-label">Total Score</div>
             <div class="score-value" id="total-score">0</div>
           </div>
         </div>
         <div class="score-item">
           <span class="score-icon">✅</span>
           <div>
-            <div class="score-label">Jawaban Benar</div>
+            <div class="score-label">Correct Answer</div>
             <div class="score-value" id="correct-count">0</div>
           </div>
         </div>
         <div class="score-item">
           <span class="score-icon">❌</span>
           <div>
-            <div class="score-label">Jawaban Salah</div>
+            <div class="score-label">Incorrect Answer</div>
             <div class="score-value" id="wrong-count">0</div>
           </div>
         </div>
@@ -71,9 +72,9 @@
 
     <!-- TAB SELECTOR: pilih mode game -->
     <div class="game-tabs">
-      <button class="tab-btn active" onclick="switchTab('quiz')">🧠 Kuis Pilihan Ganda</button>
-      <button class="tab-btn" onclick="switchTab('fillblank')">✏️ Isi Kalimat Rumpang</button>
-      <button class="tab-btn" onclick="switchTab('match')">🔗 Tebak Rumus</button>
+      <button class="tab-btn active" onclick="switchTab('quiz')">🧠 Multiple Choice Quiz</button>
+      <button class="tab-btn" onclick="switchTab('fillblank')">✏️ Fill in the Blank</button>
+      <button class="tab-btn" onclick="switchTab('match')">🔗 Match the Formula</button>
     </div>
 
     <!-- ================================================================
@@ -84,8 +85,8 @@
         <!-- Progress bar di atas soal -->
         <div class="progress-area">
           <div class="progress-info">
-            <span id="quiz-progress-text">Soal 1 dari 10</span>
-            <span id="quiz-timer" class="timer">⏱️ 15s</span>
+            <span id="quiz-progress-text"> Questions 1 through 10</span>
+            <span id="quiz-timer" class="timer">⏱️ 10s</span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill" id="quiz-progress-bar" style="width:10%"></div>
@@ -107,7 +108,7 @@
         <div class="feedback-box" id="quiz-feedback" style="display:none;">
           <div class="feedback-icon" id="feedback-icon">✅</div>
           <div>
-            <div class="feedback-title" id="feedback-title">Benar!</div>
+            <div class="feedback-title" id="feedback-title">True!</div>
             <div class="feedback-text" id="feedback-text"></div>
           </div>
         </div>
@@ -115,9 +116,9 @@
         <!-- Tombol aksi -->
         <div class="game-actions">
           <button class="btn btn-primary" id="quiz-next-btn" onclick="nextQuizQuestion()" style="display:none;">
-            Soal Berikutnya →
+            Next question →
           </button>
-          <button class="btn btn-secondary" onclick="resetQuiz()">🔄 Mulai Ulang</button>
+          <button class="btn btn-secondary" onclick="resetQuiz()">🔄 Restart</button>
         </div>
 
       </div>
@@ -130,7 +131,7 @@
       <div class="game-box">
         <div class="progress-area">
           <div class="progress-info">
-            <span id="fill-progress-text">Soal 1 dari 10</span>
+            <span id="fill-progress-text">Questions 1 through 10</span>
           </div>
           <div class="progress-bar">
             <div class="progress-fill" id="fill-progress-bar" style="width:10%"></div>
@@ -139,7 +140,7 @@
 
         <div class="question-area">
           <div class="question-badge" id="fill-category">Simple Past</div>
-          <p class="fill-instruction">Lengkapi kalimat di bawah ini dengan bentuk kata kerja yang tepat:</p>
+          <p class="fill-instruction">Complete the sentences below with the correct verb form:</p>
           <!-- Kalimat dengan blank akan muncul di sini -->
           <p class="fill-sentence" id="fill-sentence">Loading...</p>
         </div>
@@ -150,15 +151,15 @@
             type="text"
             id="fill-answer"
             class="fill-input"
-            placeholder="Ketik jawabanmu di sini..."
+            placeholder="Type your answer here..."
             onkeypress="if(event.key==='Enter') checkFillAnswer()"
           />
-          <button class="btn btn-primary" onclick="checkFillAnswer()">Cek Jawaban ✓</button>
+          <button class="btn btn-primary" onclick="checkFillAnswer()">Check Answer ✓</button>
         </div>
 
         <!-- Hint (petunjuk) -->
         <div class="hint-area">
-          <button class="hint-btn" onclick="showHint()">💡 Tampilkan Petunjuk</button>
+          <button class="hint-btn" onclick="showHint()">💡 Show Hint</button>
           <p class="hint-text" id="hint-text" style="display:none;"></p>
         </div>
 
@@ -166,16 +167,16 @@
         <div class="feedback-box" id="fill-feedback" style="display:none;">
           <div class="feedback-icon" id="fill-feedback-icon">✅</div>
           <div>
-            <div class="feedback-title" id="fill-feedback-title">Benar!</div>
+            <div class="feedback-title" id="fill-feedback-title">True!</div>
             <div class="feedback-text" id="fill-feedback-text"></div>
           </div>
         </div>
 
         <div class="game-actions">
           <button class="btn btn-primary" id="fill-next-btn" onclick="nextFillQuestion()" style="display:none;">
-            Soal Berikutnya →
+            Next question →
           </button>
-          <button class="btn btn-secondary" onclick="resetFill()">🔄 Mulai Ulang</button>
+          <button class="btn btn-secondary" onclick="resetFill()">🔄 Restart</button>
         </div>
 
       </div>
@@ -186,16 +187,16 @@
          ================================================================ -->
     <div id="game-match" class="game-panel">
       <div class="game-box">
-        <h3 class="match-title">🔗 Cocokkan Tenses dengan Rumusnya!</h3>
-        <p class="match-subtitle">Pilih tenses di kiri, lalu pilih rumus yang sesuai di kanan.</p>
-        <div class="match-score-info">Skor sesi ini: <strong id="match-score">0</strong></div>
+        <h3 class="match-title">🔗 Match Tenses with Their Forms!</h3>
+        <p class="match-subtitle">Select tenses on the left, then choose the correct form on the right.</p>
+        <div class="match-score-info">Session Score: <strong id="match-score">0</strong></div>
 
         <div class="match-area" id="match-area">
           <!-- Diisi oleh JavaScript -->
         </div>
 
         <div class="game-actions" style="margin-top:20px;">
-          <button class="btn btn-primary" onclick="generateMatchGame()">🔄 Soal Baru</button>
+          <button class="btn btn-primary" onclick="generateMatchGame()">🔄 New Questions</button>
         </div>
 
       </div>
@@ -204,25 +205,25 @@
     <!-- PANEL HASIL AKHIR (muncul saat semua soal selesai) -->
     <div id="result-panel" style="display:none;" class="game-box result-panel">
       <div class="result-emoji" id="result-emoji">🎉</div>
-      <h2 id="result-title">Luar Biasa!</h2>
-      <p id="result-message">Kamu berhasil menyelesaikan semua soal!</p>
+      <h2 id="result-title">Amazing!</h2>
+      <p id="result-message">You have successfully completed all the questions!</p>
       <div class="result-score-display">
         <div class="result-stat">
           <span id="result-correct">0</span>
-          <small>Benar</small>
+          <small>Correct</small>
         </div>
         <div class="result-stat">
           <span id="result-wrong">0</span>
-          <small>Salah</small>
+          <small>Wrong</small>
         </div>
         <div class="result-stat">
           <span id="result-pct">0%</span>
-          <small>Akurasi</small>
+          <small>Accuracy</small>
         </div>
       </div>
       <div class="game-actions" style="justify-content:center;">
-        <button class="btn btn-primary" onclick="resetQuiz()">🔄 Main Lagi</button>
-        <a href="../pages/tenses.html" class="btn btn-secondary">📖 Belajar Lagi</a>
+        <button class="btn btn-primary" onclick="resetQuiz()">🔄 Play Again</button>
+        <a href="../pages/tenses.html" class="btn btn-secondary">📖 Learn More</a>
       </div>
     </div>
 
@@ -231,7 +232,8 @@
   <footer class="footer" style="margin-top:80px;">
     <div class="container">
       <div class="footer-bottom">
-        <p>© 2026 EnglishZone – Dibuat dengan ❤️ untuk belajar bahasa Inggris</p>
+        <p>Create by Joy Perangin-Angin </p>
+        <p> Polytehnic Negeri Medan</p>
       </div>
     </div>
   </footer>
