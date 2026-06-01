@@ -439,7 +439,7 @@ a:hover { color: var(--primary-dark); }
 .footer-links ul li { margin-bottom: 8px; }
 .footer-links ul li a {
   color: #94a3b8;
-  transition: color 0.2s;
+  transition: color 0.4s;
 }
 .footer-links ul li a:hover { color: #fff; }
 
