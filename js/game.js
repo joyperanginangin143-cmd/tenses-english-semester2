@@ -31,84 +31,84 @@ const quizQuestions = [
     options: ["go", "goes", "went", "will go"],
     answer: 1,
     category: "Simple Present",
-    explanation: "Pakai 'goes' karena subjeknya She (he/she/it) → tambahkan -s/-es pada kata kerja."
+    explanation: "Use “goes” because the subject is “she” (he/she/it) → add -s/-es to the verb."
   },
   {
     question: "I ___ a book right now. Please don't disturb me.",
     options: ["read", "reads", "am reading", "was reading"],
     answer: 2,
     category: "Present Continuous",
-    explanation: "'Right now' adalah penanda Present Continuous. Rumusnya: S + am/is/are + V-ing."
+    explanation: "'Right now' is an indicator of the Present Continuous. Formula: S + am/is/are + V-ing."
   },
   {
     question: "They ___ already ___ their homework.",
     options: ["have / finished", "has / finished", "had / finished", "will / finish"],
     answer: 0,
     category: "Present Perfect",
-    explanation: "'Already' menandakan Present Perfect. They → pakai 'have'. Rumus: S + have/has + V3."
+    explanation: "'Already' indicates Present Perfect. They → use 'have'. Formula: S + have/has + V3."
   },
   {
     question: "She ___ when I called her last night.",
     options: ["sleeps", "is sleeping", "was sleeping", "slept"],
     answer: 2,
     category: "Past Continuous",
-    explanation: "'When I called' menunjukkan satu kejadian menginterupsi kejadian lain yang sedang berlangsung → Past Continuous: was sleeping."
+    explanation: "'When I called' indicates that one event interrupted another that was already taking place → Past Continuous: was sleeping."
   },
   {
     question: "He ___ the exam before I arrived at school.",
     options: ["finished", "has finished", "had finished", "will finish"],
     answer: 2,
     category: "Past Perfect",
-    explanation: "'Before I arrived' → ada dua kejadian di masa lalu. Yang lebih dulu pakai Past Perfect: had finished."
+    explanation: "'Before I arrived' → There were two events in the past. The one that happened first uses the Past Perfect: had finished."
   },
   {
     question: "I ___ to Japan next summer.",
     options: ["go", "went", "have gone", "will go"],
     answer: 3,
     category: "Simple Future",
-    explanation: "'Next summer' adalah penanda masa depan → Simple Future: will + V1."
+    explanation: "'Next summer' is a future marker  → Simple Future: will + V1."
   },
   {
     question: "By 8 PM tonight, she ___ for 3 hours.",
     options: ["studies", "will study", "will have been studying", "had studied"],
     answer: 2,
     category: "Future Perfect Continuous",
-    explanation: "'By 8 PM' + durasi waktu menunjukkan Future Perfect Continuous: will + have + been + V-ing."
+    explanation: "'By 8 PM' + The time frame indicates the Future Perfect Continuous: will + have + been + V-ing."
   },
   {
     question: "They ___ football when it started to rain.",
     options: ["play", "played", "were playing", "have played"],
     answer: 2,
     category: "Past Continuous",
-    explanation: "'When it started to rain' menginterupsi aktivitas yang sedang berlangsung → Past Continuous: were playing."
+    explanation: "'When it started to rain' indicates an interruption of an ongoing activity → Past Continuous: were playing."
   },
   {
     question: "I ___ English for 2 years, and I still continue now.",
     options: ["learn", "learned", "have learned", "have been learning"],
     answer: 3,
     category: "Present Perfect Continuous",
-    explanation: "Aktivitas dimulai di masa lalu dan masih berlanjut sekarang → Present Perfect Continuous: have been learning."
+    explanation: "The activity began in the past and is still ongoing today → Present Perfect Continuous: have been learning."
   },
   {
     question: "If I had studied harder, I ___ the exam.",
     options: ["pass", "would pass", "would have passed", "had passed"],
     answer: 2,
     category: "Past Future Perfect",
-    explanation: "Conditional Type 3 (pengandaian di masa lalu): If + had + V3, ... would + have + V3."
+    explanation: "Conditional Type 3 (assumptions made in the past): If + had + V3, ... would + have + V3."
   },
   {
     question: "She said she ___ us the next day.",
     options: ["will visit", "visits", "would visit", "is visiting"],
     answer: 2,
     category: "Past Future",
-    explanation: "Indirect speech (kalimat tidak langsung) dari past → 'will' berubah menjadi 'would'."
+    explanation: "Indirect speech (indirect sentences) in the past tense  → 'will' changes to 'would'."
   },
   {
     question: "By the time you arrive, I ___ dinner.",
     options: ["cook", "will cook", "will have cooked", "have cooked"],
     answer: 2,
     category: "Future Perfect",
-    explanation: "'By the time' adalah penanda Future Perfect: will + have + V3."
+    explanation: "'By the time' is a marker of the Future Perfect: will + have + V3."
   }
 ];
 
@@ -120,63 +120,63 @@ const quizQuestions = [
    - category  : nama tenses */
 const fillQuestions = [
   {
-    sentence: "Every morning, my mother ___ (cook) breakfast for us.",
+    sentence: "Every morning, my mother ___ *cook* breakfast for us.",
     answer: ["cooks"],
-    hint: "Simple Present → tambahkan -s/-es untuk He/She/It",
+    hint: " (cook) --- Simple Present → add -s/-es for He/She/It",
     category: "Simple Present"
   },
   {
-    sentence: "Look! The children ___ (play) in the garden right now.",
+    sentence: "Look! The children ___ *play* in the garden right now.",
     answer: ["are playing"],
-    hint: "Present Continuous → am/is/are + V-ing",
+    hint: " (play) --- Present Continuous → am/is/are + V-ing",
     category: "Present Continuous"
   },
   {
-    sentence: "I ___ (visit) Bali twice in my life.",
+    sentence: "I ___ *visit* Bali twice in my life.",
     answer: ["have visited"],
-    hint: "Present Perfect → have/has + V3",
+    hint: " (visit) --- Present Perfect → have/has + V3",
     category: "Present Perfect"
   },
   {
-    sentence: "She ___ (study) for the exam when I called her.",
+    sentence: "She ___ *study* for the exam when I called her.",
     answer: ["was studying"],
-    hint: "Past Continuous → was/were + V-ing",
+    hint: " (study) --- Past Continuous → was/were + V-ing",
     category: "Past Continuous"
   },
   {
-    sentence: "When I arrived, they ___ (already eat) all the food.",
+    sentence: "When I arrived, they ___ *already eat* all the food.",
     answer: ["had already eaten"],
-    hint: "Past Perfect → had + V3",
+    hint: " (already eat) --- Past Perfect → had + V3",
     category: "Past Perfect"
   },
   {
-    sentence: "Tomorrow, we ___ (travel) to Medan.",
+    sentence: "Tomorrow, we ___ *travel* to Medan.",
     answer: ["will travel"],
-    hint: "Simple Future → will + V1",
+    hint: " (travel) --- Simple Future → will + V1",
     category: "Simple Future"
   },
   {
-    sentence: "I ___ (learn) English since I was in elementary school.",
+    sentence: "I ___ *learn* English since I was in elementary school.",
     answer: ["have been learning"],
-    hint: "Present Perfect Continuous → have/has + been + V-ing",
+    hint: " (learn) --- Present Perfect Continuous → have/has + been + V-ing",
     category: "Present Perfect Continuous"
   },
   {
-    sentence: "At this time tomorrow, they ___ (fly) to Jakarta.",
+    sentence: "At this time tomorrow, they ___ *fly* to Jakarta.",
     answer: ["will be flying"],
-    hint: "Future Continuous → will + be + V-ing",
+    hint: " (fly) --- Future Continuous → will + be + V-ing",
     category: "Future Continuous"
   },
   {
-    sentence: "By 2030, she ___ (teach) at this school for 10 years.",
+    sentence: "By 2030, she ___ *teach* at this school for 10 years.",
     answer: ["will have been teaching"],
-    hint: "Future Perfect Continuous → will + have + been + V-ing",
+    hint: " (teach) --- Future Perfect Continuous → will + have + been + V-ing",
     category: "Future Perfect Continuous"
   },
   {
-    sentence: "He said he ___ (come) to the meeting.",
+    sentence: "He said he ___ *come* to the meeting.",
     answer: ["would come"],
-    hint: "Past Future → would + V1",
+    hint: " (come) --- Past Future → would + V1",
     category: "Past Future"
   }
 ];
@@ -211,7 +211,7 @@ let quizCurrentIndex = 0; // Indeks soal kuis yang sedang ditampilkan
 let quizShuffled     = []; // Soal yang sudah diacak
 let quizAnswered     = false; // Apakah soal sudah dijawab?
 let quizTimer        = null; // Referensi ke interval timer
-let quizTimeLeft     = 15;   // Sisa waktu dalam detik
+let quizTimeLeft     = 14;   // Sisa waktu dalam detik
 
 /* State khusus Fill in the Blank */
 let fillCurrentIndex = 0;
@@ -300,7 +300,7 @@ function showQuizQuestion() {
   /* Update progress bar dan teks progress */
   const progress = ((quizCurrentIndex + 1) / quizShuffled.length) * 100;
   el('quiz-progress-bar').style.width = progress + '%';
-  el('quiz-progress-text').textContent = `Soal ${quizCurrentIndex + 1} dari ${quizShuffled.length}`;
+  el('quiz-progress-text').textContent = `Questions ${quizCurrentIndex + 1} of ${quizShuffled.length}`;
   el('quiz-category').textContent = q.category;
   el('quiz-question').textContent = q.question;
 
@@ -337,7 +337,7 @@ function showQuizQuestion() {
 function startTimer() {
   /* Hentikan timer sebelumnya (jika ada) */
   if (quizTimer) clearInterval(quizTimer);
-  quizTimeLeft = 15;
+  quizTimeLeft = 14;
   updateTimerDisplay();
 
   quizTimer = setInterval(() => {
@@ -371,7 +371,7 @@ function timeOut() {
   updateScoreDisplay();
 
   /* Tampilkan feedback waktu habis */
-  showFeedback('quiz', false, 'Waktu habis! ⏰', 'Coba lebih cepat di soal berikutnya.');
+  showFeedback('quiz', false, 'Time\'s up! ⏰', 'Try to be faster on the next question.');
   el('quiz-next-btn').style.display = 'inline-block';
 
   /* Nonaktifkan semua tombol pilihan */
@@ -406,13 +406,13 @@ function checkAnswer(clickedBtn, selectedText, correctText, explanation) {
     const bonus = streak >= 3 ? 20 : 10;
     totalScore += bonus;
     showFeedback('quiz', true,
-      streak >= 3 ? `🔥 Streak x${streak}! +${bonus} poin` : '✅ Benar! +10 poin',
+      streak >= 3 ? `🔥 Streak x${streak}! +${bonus} point` : '✅ True! +10 point',
       explanation
     );
   } else {
     streak = 0;
     wrongCount++;
-    showFeedback('quiz', false, '❌ Salah!', `Jawaban yang benar: "${correctText}". ${explanation}`);
+    showFeedback('quiz', false, '❌ False!', `The correct answer is: "${correctText}". ${explanation}`);
   }
 
   updateScoreDisplay();
@@ -460,10 +460,10 @@ function showResult() {
 
   /* Pilih emoji dan pesan sesuai skor */
   let emoji, title, message;
-  if (pct >= 90) { emoji = '🏆'; title = 'Sempurna!'; message = 'Kamu menguasai tenses dengan sangat baik!'; }
-  else if (pct >= 70) { emoji = '🎉'; title = 'Bagus Sekali!'; message = 'Kamu memahami sebagian besar tenses!'; }
-  else if (pct >= 50) { emoji = '👍'; title = 'Lumayan!'; message = 'Masih perlu sedikit latihan lagi!'; }
-  else { emoji = '📚'; title = 'Terus Belajar!'; message = 'Yuk ulangi materi tenses dan coba lagi!'; }
+  if (pct >= 90) { emoji = '🏆'; title = 'Perfect!'; message = 'You have a very good grasp of tenses!'; }
+  else if (pct >= 70) { emoji = '🎉'; title = 'Great Job!'; message = 'You have a good understanding of tenses!'; }
+  else if (pct >= 50) { emoji = '👍'; title = 'Not Bad!'; message = 'You still need some practice with tenses!'; }
+  else { emoji = '📚'; title = 'Keep Learning!'; message = 'Let\'s review the tense rules and try again!'; }
 
   el('result-emoji').textContent     = emoji;
   el('result-title').textContent     = title;
@@ -537,12 +537,12 @@ function checkFillAnswer() {
     streak++;
     correctCount++;
     totalScore += 10;
-    showFeedback('fill', true, '✅ Benar! +10 poin', q.hint);
+    showFeedback('fill', true, '✅ True! +10 point', q.hint);
   } else {
     streak = 0;
     wrongCount++;
-    showFeedback('fill', false, '❌ Belum tepat',
-      `Jawaban yang benar: "${q.answer[0]}". ${q.hint}`);
+    showFeedback('fill', false, '❌ False',
+      `Correct answer: "${q.answer[0]}". ${q.hint}`);
   }
 
   updateScoreDisplay();
@@ -552,7 +552,7 @@ function checkFillAnswer() {
 /* Tampilkan petunjuk (hint) */
 function showHint() {
   const q = fillShuffled[fillCurrentIndex];
-  el('hint-text').textContent = '💡 Petunjuk: ' + q.hint;
+  el('hint-text').textContent = '💡 instructions: ' + q.hint;
   el('hint-text').style.display = 'block';
 }
 
@@ -586,11 +586,11 @@ function generateMatchGame() {
   /* Buat judul dua kolom */
   const leftTitle  = document.createElement('div');
   leftTitle.className = 'match-column-title';
-  leftTitle.textContent = '🏷️ Nama Tenses';
+  leftTitle.textContent = '🏷️ Names of Tenses';
 
   const rightTitle = document.createElement('div');
   rightTitle.className = 'match-column-title';
-  rightTitle.textContent = '📐 Rumus';
+  rightTitle.textContent = '📐 Formulas';
 
   container.appendChild(leftTitle);
   container.appendChild(rightTitle);
